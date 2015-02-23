@@ -5,18 +5,36 @@
 
 	    <link rel="stylesheet" type="text/css" href="">
 	    <style type="text/css">
+	    #sqaure1 div
+	    	{
+	    		height: 300px;
+	    		width: 300px;
+	    		border: 5px solid black;
+	    	}
 	    <!-- CSS goes here -->
 	    </style>
 
 	</head>
 	<body>
-		<div id = "">
-			<div id = ""></div>
+		<div id = "sqaure1">
+			<div id = "one"></div>
+			<button type = "button" onclick = "green()">Make Green</button>
+
+			<div id = "two"></div>
+			<button type = "button" onclick = "red()">Make Red</>
 		</div>
 
 	    <!-- HTML goes here -->
 	    <script type="text/javascript">
-	        <!--- //javascript code goes here at the bottom to ensure the DOM is loaded... --->
+	        function green() 
+	        {
+    			document.getElementById("one").style.backgroundColor= "green";
+			}
+			function red()
+			{
+				document.getElementById("two").style.backgroundColor = "red";
+			}			
+<!--- //javascript code goes here at the bottom to ensure the DOM is loaded... --->
 	    </script>
 	</body>
 </html>
