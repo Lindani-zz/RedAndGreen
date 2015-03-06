@@ -1,5 +1,7 @@
 var passes = 0;
 var fails = 0;
+var stats = 0;
+var newP = document.createElement("p");
 
 var assert = {
 
@@ -9,20 +11,23 @@ var assert = {
 
 		if (expectedResult === returnedResult) {
 			rg.makeGreen();
-			++passes;
+			passes++;
+			stats = passes+fails;
+			newP.innerHTML = "Passes: " + passes + " Fails: " + fails + " Total tests: " + stats;
 		}
 		else {
 
-			rg.makeRed();
-			++fails;
+			rg.makeRed(expectedResult);
+			fails++;
+			//alert(expectedResult);
+			stats = passes+fails;
+			
+			newP.innerHTML = "Passes: " + passes + " Fails: " + fails + " Total tests: " + stats;
 		}
-	var stats = passes+fails;
-	var newP = document.createElement("p");
-	newP.innerHTML = "Passes: " + passes + " Fails: " + fails + " Total tests: " + stats;
-	document.body.appendChild(newP);
+		 
 	}
-};
 
+};
 var TestMyCode = {
 	run:function(nameOfTest, functionToExecute){
 		this.testToRun = nameOfTest;
@@ -30,3 +35,6 @@ var TestMyCode = {
 	}
 };
 
+
+	
+	document.body.appendChild(newP);

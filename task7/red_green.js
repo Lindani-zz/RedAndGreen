@@ -2,15 +2,18 @@ function RedOrGreen(elementTag)
 {
 	var newSquare = document.createElement(elementTag);
 
-	this.makeGreen = function(color)
+	this.makeGreen = function()
 	{
 		newSquare.style.backgroundColor = "green";
 		newSquare.innerHTML="Passed!";
+		document.getElementById("container").appendChild(newSquare);
 	}
-	this.makeRed = function()
+	this.makeRed = function(result)
 	{
 		newSquare.style.backgroundColor = "red";
-		newSquare.innerHTML="Fail!";
+		newSquare.innerHTML="Fail: "+ result + " " + "Expected: " + helloWorld();
+		document.getElementById("container").appendChild(newSquare);
+
 	}
-	document.body.appendChild(newSquare);
+	
 };
